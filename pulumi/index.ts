@@ -42,4 +42,3 @@ const bucketObject = new aws.s3.BucketObject(
 // Export the name of the bucket
 export const bucketName = bucket.id;
 export const bucketEndpoint = pulumi.interpolate`http://${bucket.websiteEndpoint}`;
-
