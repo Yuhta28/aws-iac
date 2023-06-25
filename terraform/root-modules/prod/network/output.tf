@@ -1,6 +1,6 @@
-#output "VPC_info" {
-#  value = module.prod-network.VPC_info
-#}
+output "VPC_info" {
+  value = module.prod-network.VPC_info
+}
 
 output "VPC_id" {
   value = module.prod-network.VPC_info.vpc_id
