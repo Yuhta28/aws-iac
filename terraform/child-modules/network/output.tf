@@ -1,3 +1,3 @@
-output "VPC-name" {
-  value = module.vpc.name
+output "VPC_info" {
+  value = module.vpc
 }
