@@ -6,7 +6,7 @@
 #    load_balancer_type = "application"
 #}
 
-module "security-group_http-80" {
+module "security-group_web" {
   source = "terraform-aws-modules/security-group/aws"
 
   name          = var.web_SG-name
