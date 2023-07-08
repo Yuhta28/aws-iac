@@ -5,14 +5,6 @@ terraform {
       version = "~> 5.0"
     }
   }
-  backend "remote" {
-    hostname = "spacelift.io"
-    organization = "yuhta28"
-
-    workspaces {
-      name = "AWS-Terraform-Presentation-Prod"
-    }
-  }
 }
 provider "aws" {
   region = "ap-northeast-1"

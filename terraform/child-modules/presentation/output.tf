@@ -8,7 +8,7 @@ data "terraform_remote_state" "pool_presentation_stack_state" {
     hostname = "spacelift.io"
     organization = "yuhta28"
     workspaces = {
-      name = "AWS-Terraform-Presentation-Prod"
+      name = "aws-terraform-presentation-prod"
     }
   }
 }
