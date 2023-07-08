@@ -11,7 +11,7 @@ module "security-group_web" {
 
   name                = var.web_SG-name
   description         = "Security Group for ALB"
-  vpc_id              = "vpc-00f452c4ee7d20190"
+  vpc_id              = var.vpc_id
   ingress_cidr_blocks = ["0.0.0.0/0"]
   ingress_rules = [
     "https-443-tcp",

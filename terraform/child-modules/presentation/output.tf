@@ -2,17 +2,17 @@ output "SG_Web_Info" {
   value = module.security-group_web
 }
 
-data "terraform_remote_state" "pool_presentation_stack_state" {
+data "terraform_remote_state" "remote_network_stack_state" {
   backend = "remote"
   config = {
-    hostname = "spacelift.io"
+    hostname     = "spacelift.io"
     organization = "yuhta28"
     workspaces = {
-      name = "aws-terraform-nw-prod"
+      name = var.remote_network_stack_state
     }
   }
 }
 
 output "stack_state" {
-  value  = data.terraform_remote_state.pool_presentation_stack_state
+  value = data.terraform_remote_state.pool_presentation_stack_state
 }
