@@ -13,15 +13,23 @@ module "security-group_web" {
   description         = "Security Group for ALB"
   vpc_id              = "vpc-00f452c4ee7d20190"
   ingress_cidr_blocks = ["0.0.0.0/0"]
-  ingress_rules       = ["https-443-tcp","http-80-tcp"]
-#  ingress_with_cidr_blocks = [
-#    {
-#      rule        = "http-80-tcp"
-#      cidr_blocks = "0.0.0.0/0"
-#    },
-#    {
-#      rule        = "http-443-tcp"
-#      cidr_blocks = "0.0.0.0/0"
-#    },
-#  ]
+  ingress_rules = [
+    "https-443-tcp",
+    "http-80-tcp"
+  ]
+}
+
+data "terraform_remote_state" "pool_presentation_stack_state" {
+  backend = "remote"
+  config = {
+    hostname = "spacelift.io"
+    organization = "yuhta28"
+    workspaces = {
+      name = "AWS-Terraform-Presentation-Prod"
+    }
+  }
+}
+
+output "stack_state" {
+  value  = data.terraform_remote_state.pool_presentation_stack_state
 }
