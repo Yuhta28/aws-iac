@@ -16,6 +16,6 @@ provider "aws" {
 }
 
 module "prod-app" {
-  source                     = "../../../child-modules/app"
-  cluster_name                = "Prod-frontend"
+  source       = "../../../child-modules/app"
+  cluster_name = "Prod-frontend"
 }
