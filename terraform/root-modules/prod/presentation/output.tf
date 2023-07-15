@@ -1,3 +1,3 @@
-output "SG_Web_Info" {
-  value = module.prod-presentation.SG_Web_Info
+output "ALB_Info" {
+  value = module.prod-presentation.ALB_Info
 }
