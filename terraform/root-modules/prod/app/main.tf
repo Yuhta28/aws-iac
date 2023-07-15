@@ -12,6 +12,6 @@ module "prod-app" {
   remote_presentation_stack_state = "aws-terraform-presentation-prod"
   cluster_name                    = "Prod-frontend"
   service_name                    = "Prod-PhpApp"
-  task_def                        = "aws-ecs-sample:1"
-  
+  task_def                        = "aws-ecs-sample"
+
 }
