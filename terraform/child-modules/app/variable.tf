@@ -9,3 +9,7 @@ variable "service_name" {
 variable "task_def" {
   type = string
 }
+
+variable "remote_presentation_stack_state" {
+  type = string
+}
