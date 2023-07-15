@@ -6,7 +6,7 @@ module "alb" {
   load_balancer_type = "application"
   vpc_id             = var.vpc_id
   subnets            = var.ALB-subnets
-  
+
   security_group_rules = {
     ingress_all_http = {
       type        = "ingress"
