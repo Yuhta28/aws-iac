@@ -17,9 +17,10 @@ provider "aws" {
 
 module "prod-presentation" {
   source                     = "../../../child-modules/presentation"
-  web_SG-name                = "Web"
   remote_network_stack_state = "aws-terraform-nw-prod"
-  vpc_id                     = module.prod-presentation.network_stack_state.outputs.VPC_id
-  ALB-name                   = "Prod-Web-ALB"
-  ALB-subnets                = module.prod-presentation.network_stack_state.outputs.VPC_PublicSubnets
+
+  ALB-name    = "Prod-Web-ALB"
+  vpc_id      = module.prod-presentation.network_stack_state.outputs.VPC_id
+  ALB-subnets = module.prod-presentation.network_stack_state.outputs.VPC_PublicSubnets
 }
+

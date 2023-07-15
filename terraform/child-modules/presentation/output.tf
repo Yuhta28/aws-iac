@@ -1,5 +1,5 @@
-output "SG_Web_Info" {
-  value = module.security-group_web
+output "ALB_Info" {
+  value = module.alb
 }
 
 data "terraform_remote_state" "remote_network_stack_state" {
