@@ -10,4 +10,6 @@ terraform {
 module "prod-app" {
   source       = "../../../child-modules/app"
   cluster_name = "Prod-frontend"
+  service_name = "Prod-PhpApp"
+  task_def = "aws-ecs-sample:1"
 }
