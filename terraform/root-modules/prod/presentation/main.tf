@@ -6,14 +6,6 @@ terraform {
     }
   }
 }
-provider "aws" {
-  region = "ap-northeast-1"
-  default_tags {
-    tags = {
-      IaC = "Terraform"
-    }
-  }
-}
 
 module "prod-presentation" {
   source                     = "../../../child-modules/presentation"
