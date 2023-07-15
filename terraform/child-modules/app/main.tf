@@ -23,14 +23,14 @@ module "ecs_frontend_cluster" {
   cloudwatch_log_group_retention_in_days = 7
 }
 
-module "ecs_frontend_service" {
-  source = "terraform-aws-modules/ecs/aws//modules/service"
-
-  name        = var.service_name
-  cluster_arn = module.ecs_frontend_cluster.arn
-
-  cpu    = 1024
-  memory = 4096
-
-  family = var.task_def
-}
+#module "ecs_frontend_service" {
+#  source = "terraform-aws-modules/ecs/aws//modules/service"
+#
+#  name        = var.service_name
+#  cluster_arn = module.ecs_frontend_cluster.arn
+#
+#  cpu    = 1024
+#  memory = 4096
+#
+#  family = var.task_def
+#}
