@@ -26,7 +26,7 @@ module "ecs_frontend_cluster" {
 module "ecs_frontend_service" {
   source = "terraform-aws-modules/ecs/aws//modules/service"
 
-  name = var.service_name
+  name        = var.service_name
   cluster_arn = module.ecs_frontend_cluster.cluster_arn
 
   cpu    = 1024
