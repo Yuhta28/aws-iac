@@ -3,5 +3,3 @@ import * as aws from "@pulumi/aws";
 import * as awsx from "@pulumi/awsx";
 import { readFileSync } from "fs";
 export const readme = readFileSync("./README.md").toString();
-
-
