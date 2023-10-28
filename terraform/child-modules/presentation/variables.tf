@@ -6,10 +6,10 @@ variable "ALB-name" {
   type = string
 }
 
-variable "ALB-subnets" {
-  type = list(string)
-}
-
-variable "vpc_id" {
-  type = string
-}
+#variable "ALB-subnets" {
+#  type = list(string)
+#}
+#
+#variable "vpc_id" {
+#  type = string
+#}
