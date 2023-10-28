@@ -4,6 +4,7 @@ module "alb" {
 
   name               = var.ALB-name
   load_balancer_type = "application"
+  #terraform_remote_stateでNWリソースのstateファイル情報を参照している
   vpc_id             = data.terraform_remote_state.remote_network_stack_state.outputs.VPC_id
   subnets            = data.terraform_remote_state.remote_network_stack_state.outputs.VPC_PublicSubnets
 
