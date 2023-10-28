@@ -4,8 +4,8 @@ module "alb" {
 
   name               = var.ALB-name
   load_balancer_type = "application"
-  vpc_id             = data.terraform_remote_state.remote_network_stack_state.VPC_id
-  subnets            = data.terraform_remote_state.remote_network_stack_state.VPC_PublicSubnets
+  vpc_id             = data.terraform_remote_state.remote_network_stack_state.outputs.VPC_id
+  subnets            = data.terraform_remote_state.remote_network_stack_state.outputs.VPC_PublicSubnets
 
   security_group_rules = {
     ingress_all_http = {
