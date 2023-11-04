@@ -34,8 +34,3 @@ module "ecs_frontend_cluster" {
 #
 #  family = var.task_def
 #}
-
-module "ecs_example_fargate" {
-  source  = "terraform-aws-modules/ecs/aws//examples/fargate"
-  version = "5.2.2"
-}
