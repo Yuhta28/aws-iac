@@ -3,7 +3,7 @@ module "route53_zones" {
   version = "~> 2.0"
 
   zones = {
-    var.domain_name = {
+    "\"${var.domain_name}\"" = {
       comment = "personal domain"
       tags = {
         env = "production"
