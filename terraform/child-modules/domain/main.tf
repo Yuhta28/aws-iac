@@ -4,10 +4,10 @@ module "route53_zones" {
 
   zones = {
     var.domain_name = {
-        comment = "personal domain"
-        tags = {
-            env = "production"
-        }
+      comment = "personal domain"
+      tags = {
+        env = "production"
+      }
     }
   }
 }
