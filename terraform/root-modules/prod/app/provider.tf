@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-west-1"
+  region = "ap-northeast-1"
   default_tags {
     tags = {
       IaC = "Terraform"
