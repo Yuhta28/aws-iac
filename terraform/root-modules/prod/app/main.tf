@@ -13,5 +13,4 @@ module "prod-app" {
   cluster_name                    = "Prod-frontend"
   service_name                    = "Prod-PhpApp"
   task_def                        = "aws-ecs-sample"
-
 }

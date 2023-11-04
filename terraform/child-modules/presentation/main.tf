@@ -33,4 +33,6 @@ module "alb" {
       cidr_blocks = ["0.0.0.0/0"]
     }
   }
+
+  enable_deletion_protection = false
 }
