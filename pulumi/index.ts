@@ -23,9 +23,15 @@ const vpc = new awsx.ec2.Vpc("vpc", {
     },
   ],
   natGateways: {
-    strategy: awsx.ec2.NatGatewayStrategy.Single,
+    strategy: awsx.ec2.NatGatewayStrategy.None,
   },
   tags: {
     Name: "pulumi-vpc",
   },
+
+  vpcEndpointSpecs: [
+    {
+      serviceName: "com.amazonaws.ap-northeast-1.s3",
+    },
+  ],
 });
