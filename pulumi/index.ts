@@ -31,7 +31,7 @@ const vpc = new awsx.ec2.Vpc("vpc", {
 
   vpcEndpointSpecs: [
     {
-      serviceName: "com.amazonaws.ap-northeast-1.s3",
+      serviceName: `com.amazonaws.${AWS_REGION}.s3`,
     },
   ],
 });
