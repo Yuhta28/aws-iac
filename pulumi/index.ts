@@ -4,6 +4,7 @@ import * as awsx from "@pulumi/awsx";
 import { readFileSync } from "fs";
 export const readme = readFileSync("./README.md").toString();
 
+// Pulumi Cloudで設定されているAWSリージョン情報を取得
 const awsRegion = process.env.AWS_REGION
 
 // create VPC resource in Pulumi TS
@@ -33,6 +34,9 @@ const vpc = new awsx.ec2.Vpc("vpc", {
   vpcEndpointSpecs: [
     {
       serviceName: `com.amazonaws.${awsRegion}.s3`,
+      tags: {
+        Name: "pulumi-s3-endpoint",
+      }
     },
   ],
 });
