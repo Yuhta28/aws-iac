@@ -2,8 +2,9 @@ import * as pulumi from "@pulumi/pulumi";
 import * as aws from "@pulumi/aws";
 import * as awsx from "@pulumi/awsx";
 import { readFileSync } from "fs";
-import { type } from "os";
 export const readme = readFileSync("./README.md").toString();
+
+const awsRegion = process.env.AWS_REGION
 
 // create VPC resource in Pulumi TS
 const vpc = new awsx.ec2.Vpc("vpc", {
@@ -23,9 +24,15 @@ const vpc = new awsx.ec2.Vpc("vpc", {
     },
   ],
   natGateways: {
-    strategy: awsx.ec2.NatGatewayStrategy.Single,
+    strategy: awsx.ec2.NatGatewayStrategy.None,
   },
   tags: {
     Name: "pulumi-vpc",
   },
+
+  vpcEndpointSpecs: [
+    {
+      serviceName: `com.amazonaws.${awsRegion}.s3`,
+    },
+  ],
 });
