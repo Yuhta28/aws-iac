@@ -7,10 +7,8 @@ terraform {
   }
 }
 
-#module "prod-app" {
-#  source                          = "../../../child-modules/app"
-#  remote_presentation_stack_state = "aws-terraform-presentation-prod"
-#  cluster_name                    = "Prod-frontend"
-#  service_name                    = "Prod-PhpApp"
-#  task_def                        = "aws-ecs-sample"
-#}
+module "prod-app" {
+  source                          = "../../../child-modules/app"
+  remote_presentation_stack_state = "aws-terraform-presentation-prod"
+  cluster_name                    = "Prod-frontend"
+}

@@ -21,6 +21,9 @@ module "ecs_frontend_cluster" {
   }
 
   cloudwatch_log_group_retention_in_days = 7
+
+  create_task_exec_iam_role = true
+  task_exec_iam_role_name   = "${var.cluster_name}-task-exec"
 }
 
 #module "ecs_frontend_service" {
