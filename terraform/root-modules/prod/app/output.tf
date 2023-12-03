@@ -5,3 +5,7 @@
 #output "Frontend_service_info" {
 #  value = module.prod-app.ecs_frontend_service
 #}
+
+output "ecr_info" {
+  value = module.ecr
+}
