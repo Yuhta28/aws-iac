@@ -7,5 +7,5 @@
 #}
 
 output "ecr_info" {
-  value = module.ecr
+  value = aws_ecr_repository.nginx
 }

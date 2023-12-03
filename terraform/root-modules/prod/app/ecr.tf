@@ -1,6 +1,8 @@
-module "ecr" {
-  source  = "terraform-aws-modules/ecr/aws"
-  version = "1.5.1"
+resource "aws_ecr_repository" "nginx" {
+  name                 = "prod-ecr-nginx"
+  image_tag_mutability = "IMMUTABLE"
 
-  repository_name = "prod-ecr-nginx"
+  image_scanning_configuration {
+    scan_on_push = true
+  }
 }
