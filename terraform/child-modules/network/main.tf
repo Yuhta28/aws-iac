@@ -18,7 +18,7 @@ module "vpc" {
 
 # EC2 Instance Connectのエンドポイントを作成
 resource "aws_ec2_instance_connect_endpoint" "ec2_connect_endpoint" {
-  subnet_id          = module.network.private_subnets[0]
+  subnet_id          = module.vpc.private_subnets[0]
   preserve_client_ip = false
   security_group_ids = [aws_security_group.ec2_connect_endpoint_sg.id]
   tags = {
@@ -32,13 +32,13 @@ resource "aws_ec2_instance_connect_endpoint" "ec2_connect_endpoint" {
 resource "aws_security_group" "ec2_connect_endpoint_sg" {
   name        = "${var.vpc_name}-ec2-connect"
   description = "Managed by Terraform for EC2 Connect Endpoint"
-  vpc_id      = module.network.vpc_id
+  vpc_id      = module.vpc.vpc_id
 
   egress {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [module.network.vpc_cidr_block]
+    cidr_blocks = [module.vpc.vpc_cidr_block]
   }
 
   tags = {
