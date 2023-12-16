@@ -17,3 +17,7 @@ output "VPC_PublicSubnets" {
 output "VPC_PrivateSubnets" {
   value = module.prod-network.VPC_info.private_subnets
 }
+
+output "ec2_connect_endpoint" {
+  value = module.prod-network.ec2_connect_endpoint
+}
