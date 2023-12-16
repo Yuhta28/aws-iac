@@ -9,3 +9,7 @@ variable "cluster_name" {
 variable "remote_presentation_stack_state" {
   type = string
 }
+
+variable "remote_network_stack_state" {
+  type = string
+}
