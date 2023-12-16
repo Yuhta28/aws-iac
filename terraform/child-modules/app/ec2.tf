@@ -20,7 +20,7 @@ resource "aws_security_group" "ec2_sg" {
     from_port       = 22
     to_port         = 22
     protocol        = "tcp"
-    security_groups = data.terraform_remote_state.remote_network_stack_state.outputs.ec2_connect_endpoint.security_group_ids[0]
+    security_groups = data.terraform_remote_state.remote_network_stack_state.outputs.ec2_connect_endpoint.security_group_ids
   }
   #  ingress {
   #    from_port       = 80
