@@ -6,7 +6,7 @@ module "ec2_instance" {
   instance_type          = "t2.micro"
   ami                    = data.aws_ami.ubuntu.id
   monitoring             = true
-  vpc_security_group_ids = [aws_security_group.ec2_sg]
+  vpc_security_group_ids = [aws_security_group.ec2_sg.id]
   subnet_id              = data.terraform_remote_state.remote_network_stack_state.outputs.VPC_PrivateSubnets[0]
 }
 
