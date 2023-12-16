@@ -8,7 +8,8 @@ module "ec2_instance" {
   monitoring             = true
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
   #subnet_id              = data.terraform_remote_state.remote_network_stack_state.outputs.VPC_PrivateSubnets[0]
-  subnet_id = data.terraform_remote_state.remote_network_stack_state.outputs.VPC_PublicSubnets[0]
+  subnet_id                   = data.terraform_remote_state.remote_network_stack_state.outputs.VPC_PublicSubnets[0]
+  associate_public_ip_address = true
 }
 
 ## EC2アタッチ用セキュリティグループ
