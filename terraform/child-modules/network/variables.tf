@@ -1,4 +1,4 @@
-variable "NW-name" {
+variable "vpc_name" {
   type        = string
   description = "VPC resource name"
 }
